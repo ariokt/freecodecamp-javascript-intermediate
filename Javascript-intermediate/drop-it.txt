@@ -1,0 +1,15 @@
+## check the arr list from the start until func return true and slice to result.
+
+function dropElements(arr, func) {
+  var result = [];
+  for (var i in arr) {
+    if (func(arr[i]) === true) {
+      result = arr.slice(i, arr.length);
+      break;
+    }
+  }
+  console.log(result);
+  return result;
+}
+
+dropElements([1, 2, 3], function(n) {return n < 3; });

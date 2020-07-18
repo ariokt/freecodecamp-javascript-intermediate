@@ -1,0 +1,27 @@
+## return list object where have same attribute as the second argument
+
+function whatIsInAName(collection, source) {
+  var arr = [];
+  
+  // Only change code below this line
+  collection.map(object => {
+  var parameter = [];
+    for (var attr in source) {
+     if (source[attr] === object[attr]){
+       parameter.push(true);
+     } else {
+       parameter.push(false);
+     }
+    }
+    if (parameter.indexOf(false) < 0) {
+      arr.push(object);
+    }
+    
+  })
+
+  // Only change code above this line
+  console.log(arr);
+  return arr;
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });

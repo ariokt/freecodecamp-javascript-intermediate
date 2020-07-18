@@ -1,0 +1,16 @@
+## create new array which the member only in arr1 or arr2
+
+function diffArray(arr1, arr2) {
+  var concatArr = [...arr1, ...arr2]
+  var newArr = [];
+
+  for (var i in concatArr) {
+    if (arr1.indexOf(concatArr[i]) < 0 | arr2.indexOf(concatArr[i]) < 0) {
+      newArr.push(concatArr[i]);
+    }
+  }
+  console.log(newArr);
+  return newArr;
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);

@@ -1,0 +1,15 @@
+## delete the second until the last argument from the list
+
+function destroyer(...arr) {
+  var theArr = arr[0];
+  var result = [];
+  for (var i = 0; i < theArr.length; i++) {
+    if (arr.indexOf(theArr[i]) < 1) {
+      result.push(theArr[i]);
+    }
+  }
+  console.log(result);
+  return result;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);

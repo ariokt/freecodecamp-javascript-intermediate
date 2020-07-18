@@ -1,0 +1,25 @@
+## converting string. make the string to list and than use the list to replace.
+
+function convertHTML(str) {
+  var same = {
+    "<": "&lt;",
+    ">": "&gt;",
+    "&": "&amp;",
+    "'": "&apos;",
+    '"': "&quot;"
+  }
+
+  var splitting = str.split("");
+  
+  for (var i in splitting) {
+    if (same[splitting[i]] !== undefined) {
+      splitting[i] = same[splitting[i]];
+    }  
+  }
+  
+  var result = splitting.join("");
+  console.log(result);
+  return result;
+}
+
+convertHTML("Dolce & Gabbana");

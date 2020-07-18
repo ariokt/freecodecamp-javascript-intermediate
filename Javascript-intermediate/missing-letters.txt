@@ -1,0 +1,18 @@
+## return a letter that not included in the str but have to included.
+
+function fearNotLetter(str) {
+  var allLetter = "abcdefghijklmnopqrstuvwxyz"
+  var indexLetter = allLetter.indexOf(str[0]);
+  console.log(indexLetter);
+  for (var i in str) {
+    console.log(str[i]);
+    console.log(allLetter[indexLetter])
+    if (str[i] !== allLetter[indexLetter]) {
+      return allLetter[indexLetter];
+    }
+    indexLetter += 1;
+  }
+  return undefined;
+}
+
+fearNotLetter("abce");

@@ -1,0 +1,16 @@
+## grouping and push to list result
+
+function pairElement(str) {
+  
+  var pair = {
+    A: "T",
+    T: "A",
+    C: "G",
+    G: "C"
+  }
+  var listStr = str.split("");
+  var result = listStr.map(x => [x, pair[x]]);
+  return result;
+}
+
+pairElement("GCG");

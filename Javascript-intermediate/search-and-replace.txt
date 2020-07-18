@@ -1,0 +1,15 @@
+## replace before to after. But if the before start from uppercase, we use after start with uppercase also.
+
+function myReplace(str, before, after) {
+  var matching = before.match(/[A-Z]/);
+  
+  if (matching !== null) {
+    var uppering = after.replace(/([a-z])/, v => v.toUpperCase());
+    console.log(uppering);
+    str = str.replace(before, uppering);
+    return str;
+  }
+  return str.replace(before, after);
+}
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");

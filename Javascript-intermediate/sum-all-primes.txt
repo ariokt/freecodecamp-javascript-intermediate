@@ -1,0 +1,22 @@
+## push prime to the list and sum the list
+
+function sumPrimes(num) {
+  var primeList = [2];
+  for (var i = 3; i <= num; i++) {
+    for (var j in primeList) {
+      if (primeList.indexOf(i) < 0) {
+        primeList.push(i); 
+      }
+      else if (i % primeList[j-1] === 0){
+        primeList = primeList.filter(item => item !== i)
+        break;
+      }
+    }    
+  }
+  console.log(primeList);
+  var result = primeList.reduce((a, b) => a + b, 0);
+  console.log(result);
+  return result;
+}
+
+sumPrimes(10);

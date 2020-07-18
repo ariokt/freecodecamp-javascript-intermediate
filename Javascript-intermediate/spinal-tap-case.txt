@@ -1,0 +1,14 @@
+## replace aA to a-a or a_a to a-a or a_A to a-a or a a to a-a
+
+function spinalCase(str) {
+  const noSpace = /([a-z])([A-Z])/g;
+  const symb = /\s+|_+/g;
+
+  let result = str.replace(noSpace, '$1-$2')
+                  .replace(symb, '-')
+                  .toLowerCase();
+  console.log(result);
+  return result;
+}
+
+spinalCase('This Is Spinal Tap');
